@@ -28,8 +28,11 @@ around that fact:
 
 ## Install
 
+From source (PyPI release coming):
+
 ```sh
-uv tool install mintsoft-mcp        # or: pip install mintsoft-mcp
+uv tool install git+https://github.com/AhamadFalah/mintsoft-mcp
+# or: pip install git+https://github.com/AhamadFalah/mintsoft-mcp
 ```
 
 You need a Mintsoft API key (Mintsoft → Settings → API).
