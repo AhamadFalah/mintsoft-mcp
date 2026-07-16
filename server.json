@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.ahamadfalah/mintsoft-mcp",
+  "description": "Mintsoft WMS API as MCP tools — orders, products, stock, inbound, returns, reports. Read-only by default; writes gated behind an explicit client allowlist; every call audit-logged.",
+  "repository": {
+    "url": "https://github.com/AhamadFalah/mintsoft-mcp",
+    "source": "github"
+  },
+  "version": "0.1.1",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "mintsoft-mcp",
+      "version": "0.1.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "MINTSOFT_API_KEY",
+          "description": "Mintsoft API key (Mintsoft → Settings → API)",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "MINTSOFT_ENABLE_WRITES",
+          "description": "Set to 1 to register the 8 write tools (default 0 = read-only)",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "MINTSOFT_WRITE_CLIENT_ALLOWLIST",
+          "description": "Comma-separated ClientIds writes may touch. Empty (default) = all writes refused. Mintsoft has no sandbox — allowlist only a dedicated test client.",
+          "isRequired": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
