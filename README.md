@@ -132,3 +132,6 @@ python scripts/smoke_test.py --write    # + guarded write demo
 ## Licence
 
 [Apache-2.0](LICENSE).
+
+<!-- MCP registry ownership marker -->
+mcp-name: io.github.ahamadfalah/mintsoft-mcp
