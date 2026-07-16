@@ -144,9 +144,13 @@ def search_products(query: str) -> list | dict:
 
 
 @mcp.tool()
-def list_products(page: int = 1, limit: int = 50) -> list | dict:
-    """List products (paged). limit max 100."""
-    return _out(client().get("Product/List", {"PageNo": page, "Limit": _cap(limit)}))
+def list_products(page: int = 1, limit: int = 50, client_id: int = 0) -> list | dict:
+    """List products (paged). limit max 100. client_id filters to one client (0 = all).
+    Unlike search_products, this listing INCLUDES bundles — use it to find a bundle's product ID."""
+    p = {"PageNo": page, "Limit": _cap(limit)}
+    if client_id:
+        p["ClientId"] = client_id
+    return _out(client().get("Product/List", p))
 
 
 @mcp.tool()
