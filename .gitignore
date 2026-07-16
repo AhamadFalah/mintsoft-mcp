@@ -1,0 +1,24 @@
+# secrets & local config
+.env
+.env.*
+!.env.example
+
+# audit logs & pulled live data
+logs/
+*.jsonl
+smoke_results*.json
+*.log
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# editors / os
+.DS_Store
+.idea/
+.vscode/
